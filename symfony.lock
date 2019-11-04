@@ -78,6 +78,12 @@
     "egulias/email-validator": {
         "version": "2.1.11"
     },
+    "friendsofsymfony/oauth-server-bundle": {
+        "version": "1.6.2"
+    },
+    "friendsofsymfony/oauth2-php": {
+        "version": "1.2.3"
+    },
     "friendsofsymfony/user-bundle": {
         "version": "v2.1.2"
     },
@@ -142,6 +148,9 @@
             "config/packages/jms_serializer.yaml",
             "config/packages/prod/jms_serializer.yaml"
         ]
+    },
+    "nikic/php-parser": {
+        "version": "v4.2.5"
     },
     "ocramius/package-versions": {
         "version": "1.4.0"
@@ -264,6 +273,15 @@
     },
     "symfony/intl": {
         "version": "v4.3.6"
+    },
+    "symfony/maker-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
+        }
     },
     "symfony/mime": {
         "version": "v4.3.6"
