@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
+use FOS\RestBundle\View\View;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 /**
@@ -19,9 +20,9 @@ class TestController extends FOSRestController
      *
      * @return Response
      */
-    public function getTestAction()
+    public function getTestAction(): View
     {
         $view = ['data' => 'test'];
-        return $this->handleView($this->view($view));
+        return View::create($view, Response::HTTP_CREATED);
     }
 }
