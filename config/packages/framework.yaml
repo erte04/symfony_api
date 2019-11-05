@@ -17,3 +17,8 @@ framework:
 
   templating:
     engines: ["twig"]
+
+  serializer:
+    # enabled: true
+    # mapping:
+    #   paths: ["%kernel.root_dir%/Serializer"]

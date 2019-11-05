@@ -1,7 +1,12 @@
 jms_serializer:
-    visitors:
-        xml_serialization:
-            format_output: '%kernel.debug%'
+  metadata:
+    directories:
+      configuration-database:
+        namespace_prefix: "App\\Entity"
+        path: "%kernel.root_dir%/Serializer"
+  visitors:
+    xml_serialization:
+      format_output: "%kernel.debug%"
 #    metadata:
 #        auto_detection: false
 #        directories:
