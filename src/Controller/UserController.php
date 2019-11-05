@@ -28,6 +28,8 @@ class UserController extends FOSRestController
     public function getUsers()
     {
         $users = $this->userHandler->getUserList();
-        return View::create($users, Response::HTTP_OK);
+        $view = $this->view($users);
+        $view->getContext()->setGroups(['user_list']);
+        return $this->handleView($view);
     }
 }
