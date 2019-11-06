@@ -25,4 +25,9 @@ class UserHandler
     {
         return $this->entityManager->findAll();
     }
+
+    public function getUser(int $id): ?User
+    {
+        return $this->entityManager->find($id);
+    }
 }

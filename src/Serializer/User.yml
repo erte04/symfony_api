@@ -2,9 +2,21 @@ App\Entity\User:
   exclusion_policy: ALL
   properties:
     id:
-      groups: [user_list]
+      groups: [user_list, user_info]
   virtual_properties:
     getUsername:
       serialized_name: username
-      groups: [user_list]
+      groups: [user_list, user_info]
       type: string
+    getEmail:
+      serialized_name: email
+      groups: [user_info]
+      type: string
+    isEnabled:
+      serialized_name: enabled
+      groups: [user_info]
+      type: bool
+    getRoles:
+      serialized_name: roles
+      groups: [user_info]
+      type: array

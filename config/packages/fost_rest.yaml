@@ -18,3 +18,9 @@ fos_rest:
     view_response_listener: "force"
     formats:
       json: true
+  exception:
+    exception_controller: "fos_rest.exception.controller:showAction"
+    codes:
+      Doctrine\ORM\EntityNotFoundException: 404
+      \LogicException: 400
+      \DomainException: 400
