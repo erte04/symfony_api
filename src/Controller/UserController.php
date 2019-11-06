@@ -9,6 +9,8 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\View\View;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Swagger\Annotations as SWG;
+use Nelmio\ApiDocBundle\Annotation\Model;
 
 /**
  * @Route("/api/users", name="users")
@@ -24,6 +26,17 @@ class UserController extends FOSRestController
 
     /**
      * @Rest\Get("/")
+     * 
+     * 
+     * @SWG\Response(
+     *     response=200,
+     *     description="Return user list",
+     *     @SWG\Schema(
+     *         type="array",
+     *         @SWG\Items(ref=@Model(type=User::class, groups={"user_list"}))
+     *     )
+     * )
+     * @SWG\Tag(name="users")
      */
     public function getUsers(): Response
     {

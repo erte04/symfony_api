@@ -7,3 +7,4 @@ App\Entity\User:
     getUsername:
       serialized_name: username
       groups: [user_list]
+      type: string
