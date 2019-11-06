@@ -54,9 +54,17 @@ class UserController extends FOSRestController
      * @Rest\Get("/{id}")
      * 
      * 
+     * @SWG\Parameter(
+     *     name="id",
+     *     in="path",
+     *     type="integer",
+     *     description="User id"
+     * )
+     * 
      * @SWG\Response(
      *     response=200,
-     *     description="Return user object"
+     *     description="Return user object",
+     *     @Model(type=User::class, groups={"user_info"})
      * )
      * @SWG\Tag(name="users")
      */

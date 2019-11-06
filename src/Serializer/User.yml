@@ -15,8 +15,8 @@ App\Entity\User:
     isEnabled:
       serialized_name: enabled
       groups: [user_info]
-      type: bool
+      type: boolean
     getRoles:
       serialized_name: roles
       groups: [user_info]
-      type: array
+      type: array<string>
