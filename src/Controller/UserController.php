@@ -80,4 +80,46 @@ class UserController extends FOSRestController
 
         return $this->handleView($view);
     }
+
+    /**
+     * @Rest\Post("/")
+     * @SWG\Response(
+     *     response=201,
+     *     description="Returns the object of created user",
+     *     @Model(type=User::class, groups={"user_info"})
+     * )
+     * @SWG\Parameter(
+     *     name="username",
+     *     in="formData",
+     *     type="string",
+     *     required=true
+     * )
+     * @SWG\Parameter(
+     *     name="email",
+     *     in="formData",
+     *     type="string",
+     *     required=true
+     * )
+     * @SWG\Parameter(
+     *     name="password",
+     *     in="formData",
+     *     type="string",
+     *     required=true
+     * )
+     * @SWG\Parameter(
+     *     name="roles",
+     *     in="formData",
+     *     type="string",
+     *     description="example: ['ROLE_ADMIN']",
+     *     required=true
+     * )
+     * @SWG\Tag(name="users")
+     */
+    public function postUser(Request $request): View
+    {
+        $data = json_decode($request->getContent(), true);
+        $User = $this->userHandler->createUser($data);
+
+        return $this->view($User, Response::HTTP_CREATED);
+    }
 }
